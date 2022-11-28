@@ -343,7 +343,7 @@ body.classes{
     background: rgba(229,161,161,0);
     text-decoration: none;
 }
-.classes__index__joblist--dps__body > div > div > a:hover {
+.classes__index__joblist--dps__body > div > div > div > a:hover {
     background: rgba(229,161,161,0.2);
     text-decoration: none;
 }
