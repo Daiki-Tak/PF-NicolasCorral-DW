@@ -324,6 +324,7 @@ body.classes{
     background: rgba(153,170,255,0);
     position: relative;
     text-decoration: none;
+    transition: all 200ms linear;
 }
 .classes__index__joblist--tanque__body > div > div > a:hover {
     background: rgba(153,170,255,0.2);
@@ -625,6 +626,7 @@ todo esto y lograr entender algo :,) --- */
     font-weight: bold;
     margin: 12px 0 24px;
     color: #363636;
+    transition: all 200ms linear;
 }
 .cont-index--form__submit:hover{
     cursor:pointer;
