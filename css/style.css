@@ -117,6 +117,7 @@ body.inicio{ /*Background para la pág de inicio*/
 .main{ /*Espaciado en el logo central*/
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 90%;
     height: 100vh;
     margin: 0 auto;
