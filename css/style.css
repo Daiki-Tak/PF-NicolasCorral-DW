@@ -117,7 +117,6 @@ body.inicio{ /*Background para la pág de inicio*/
 .main{ /*Espaciado en el logo central*/
     display: flex;
     align-items: center;
-    justify-content: center;
     width: 90%;
     height: 100vh;
     margin: 0 auto;
@@ -221,23 +220,34 @@ body.story{
     padding-bottom: 16px;
 }
 .story__detail > div{
-    list-style: none;
-    width: auto;
+    display: flex;
+    align-items: center;
+    width: 100%;
     height: 80px;
     padding-left: 0;
 }
-.story__detail > div > div{
-    display: inline-block;
-}
-.story__detail > div > div > div > a > img{
+.story__detail > div > div.two {
     width: 64px;
     height: 64px;
-    margin-bottom: 16px;
 }
-.story__detail > div > div > div.two{
+.story__detail > div > div > a {
+    font-size: 0px;
+}
+.story__detail > div > div > a > img{
+    width: 64px;
+    height: auto;
+}
+.story__detail > div > div.one{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.story__detail > div > div.one > a {
+    font-size: 0px;
+}
+.story__detail > div > div.one > a > img {
     width: 400px;
     height: 80px;
-    padding-left: 678px;
 }
 
 /* ================= /Historia ================= */
@@ -253,7 +263,7 @@ body.classes{
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 100%;
+    width: 100vw;
     padding: 16px 0 120px;
     word-break: normal;
     word-wrap: break-word;
@@ -626,7 +636,6 @@ todo esto y lograr entender algo :,) --- */
     font-weight: bold;
     margin: 12px 0 24px;
     color: #363636;
-    transition: all 200ms linear;
 }
 .cont-index--form__submit:hover{
     cursor:pointer;
