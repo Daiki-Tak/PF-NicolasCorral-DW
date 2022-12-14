@@ -274,7 +274,6 @@ body#classes{
     font-family: 'Noto Sans', sans-serif;
     color: #585858;
 }
-
 .classes__content{
     display: flex;
     align-items: center;
@@ -289,7 +288,6 @@ body#classes{
     padding: 0;
     font-size: 14px;
 }
-
 .classes__index__joblist{
     display: flex;
     margin-bottom: 32px;
@@ -318,13 +316,11 @@ body#classes{
         }
     }
 }
-.classes__index__joblist--curandero > h2{
-    background: #346624;
-}
-.classes__index__joblist--dps > h2{
-    background: #732828;
-}
-.classes__index__joblist--tanque__body, .classes__index__joblist--curandero__body{
+.classes__index__joblist--tanque__body, .classes__index__joblist--curandero__body {
+    p {
+        padding: 16px 16px 12px;
+        font-size: 14px;
+    }
     div{
         display: flex;
         flex-direction: column;
@@ -379,19 +375,36 @@ body#classes{
                     img {
                         margin-right: 8px;
                     }
+                    &:hover{
+                        background: rgba(153,170,255,0.2);
+                        text-decoration: none;
+                    }
                 }
             }
         }
     }
 }
-.classes__index__joblist--tanque__body {
-    div{
-        div{
-            a:hover{
-                background: rgba(153,170,255,0.2);
-                text-decoration: none;
-            }
-        }
+.classes__index__joblist--tanque {
+    margin-right: 20px;
+    background: url(../images/clases/background-tanks.jpg) bottom right no-repeat #f3f3f3;
+}
+.classes__index__joblist--curandero {
+    border-radius: 6px;
+    background: url(../images/clases/background-healers.jpg) bottom right no-repeat #f3f3f3;
+    h2{
+        background: #346624;
+    }
+}
+.classes__index__joblist--dps {
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    background: url(../images/clases/background-dps.jpg) 72px bottom no-repeat #f3f3f3;
+    width: auto;
+    float: none;
+    overflow: hidden;
+    h2{
+        background: #732828;
     }
 }
 .classes__index__joblist--curandero__body {
@@ -425,23 +438,6 @@ body#classes{
         }
     }
 
-}
-.classes__index__joblist--tanque {
-    margin-right: 20px;
-    background: url(../images/Clases/Background-Tanks.jpg) bottom right no-repeat #f3f3f3;
-}
-.classes__index__joblist--curandero {
-    border-radius: 6px;
-    background: url(../images/Clases/Background-Healers.jpg) bottom right no-repeat #f3f3f3;
-}
-.classes__index__joblist--dps {
-    display: flex;
-    flex-direction: column;
-    border-radius: 6px;
-    background: url(../images/Clases/Background-DPS.jpg) 72px bottom no-repeat #f3f3f3;
-    width: auto;
-    float: none;
-    overflow: hidden;
 }
 .classes__index__joblist--dps__inner {
     width: 390px;
