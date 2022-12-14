@@ -31,7 +31,7 @@ img {
 /* ================= index ================= */
 body#inicio {
   /*Background para la pág de inicio*/
-  background: #ccc url("../images/Inicio/background.jpg") no-repeat top;
+  background: #ccc url("../images/inicio/background.jpg") no-repeat top;
   background-size: cover; }
 
 .grid {
