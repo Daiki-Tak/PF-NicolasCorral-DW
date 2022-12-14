@@ -930,6 +930,14 @@ todo esto y lograr entender algo :,) --- */
             padding-bottom: 16px;
             max-width: 100%;
         }
+        div {
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            div.one {
+                justify-content: center;
+            }
+        }
     }
     #endwalker {
         div.story__detail{

@@ -772,6 +772,12 @@ todo esto y lograr entender algo :,) --- */
       font-size: 18px;
       padding-bottom: 16px;
       max-width: 100%; }
+    .story__detail div {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start; }
+      .story__detail div div.one {
+        justify-content: center; }
   #endwalker div.story__detail div {
     margin-bottom: 18px; }
   /* ======== /Historia ======== */
