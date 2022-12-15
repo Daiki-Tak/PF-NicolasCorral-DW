@@ -33,12 +33,10 @@ body#story{
 /* --- Ordenamiento de las posiciones de las imagenes --- */
 .story__bg{ 
     position:absolute;
-    width: 100%;
-    height: 1080px;
+    @include size(100%,1080px);
     z-index: -1;
     img{
-        height: 100%;
-        width: 100%;
+        @include size(100%,100%);
         object-fit: cover;
     }
 }
@@ -52,33 +50,25 @@ body#story{
 
 /* --- Justificación del texto y los botones --- */
 .story__detail{
-    display: flex;
-    width: auto;
-    height: 1080px;
+    @include flexColumnEnd;
+    @include size(auto,1080px);
     position: relative;
     padding: 0 18px;
-    flex-direction: column;
-    justify-content: flex-end;
     p{
         line-height: 1;
         font-size: 18px;
         padding-bottom: 16px;
     }
     div{
-        display: flex;
-        width: 90%;
-        height: 80px;
-        padding-left: 0;
-        flex-direction: column;
+        @include flexColumnCenterCenter;
         flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
+        @include size(90%,80px);
+        padding-left: 0;
         div{
             a {
                 font-size: 0px;
                 img{
-                    width: 64px;
-                    height: auto;
+                    @include size(64px,auto);
                 }
             }
         }
@@ -87,19 +77,16 @@ body#story{
             a {
                 font-size: 0px;
                 img {
-                    width: 400px;
-                    height: 80px;
+                    @include size(400px,80px);
                 }
             }
         }
         div.two {
-            width: 64px;
-            height: 64px;
+            @include size(64px,64px);
             align-self: flex-start;
         }
     }
 }
-
 @media (max-width: 831px){
     .story {
         div{
@@ -108,19 +95,15 @@ body#story{
     }
     .story__bg{ 
         position:relative;
-        width: 100%;
-        height: auto;
+        @include size(100%,auto);
         z-index: 0;
     }
     .story__detail {
-        display: flex;
-        width: 95%;
-        height: auto;
+        @include size(95%,auto);
+        @include flexColumnEnd;
+        flex-wrap: wrap;
         position: relative;
         padding: 0 2.5%;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: flex-end;
         h4 {
             width: fit-content;
         }
@@ -149,13 +132,10 @@ body#story{
 }
 @media (max-width: 475px){
     .story__detail > div {
-        display: flex;
-        width: 100%;
-        height: auto;
-        padding-left: 0;
-        flex-direction: column;
+        @include flexColumn-Center;
         flex-wrap: nowrap;
-        align-items: center;
+        @include size(100%,auto);
+        padding-left: 0;
     }
 }
 /* ========== /historia ========== */

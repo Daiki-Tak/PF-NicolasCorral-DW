@@ -2,9 +2,8 @@
 /* ========== contacto ========== */
 
 .cont-main {
-    width: 100%;
+    @include size(100%,1%);
     background: #ccc;
-    height: 1%;
     display: block;
     width: 860px;
     padding: 48px 0 108px;
@@ -20,9 +19,7 @@
     color: #0e438c;
 }
 .cont-index {
-    display: flex; 
-    flex-direction: column;
-    align-items: center;
+    @include flexColumn-Center;
     background: #FFF;
     width: 100%;
     border-radius: 8px;
@@ -32,8 +29,7 @@
 .cont-index--form {
     display: block;
     background: #ffffff;
-    width: 700px;
-    height: 50px;
+    @include size(700px,50px);
     margin: 12px auto;
     border: 1px solid #bbbbbb;
     border-radius: 6px;
@@ -43,9 +39,7 @@
     }
 }
 .cont-index--form__bottom{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flexColumn-Center;
     width: 100%;
     div:first-child{
         align-self: flex-start;
@@ -66,8 +60,7 @@
     }
 }
 .cont-index--form__input {
-    width: 700px;
-    height: 50px;
+    @include size(700px,50px);
     padding: 0 0 0 20px;
     border-radius: 6px;
     font-size: 20px;
@@ -81,8 +74,7 @@
 .cont-index--form__checkbox{
     margin-bottom: 4px;
     margin-left: 8px;
-    width: 15px;
-    height: 15px;
+    @include size(15px,15px);
 }
 .cont-index--form__checkbox__label{
     display: inline;
@@ -97,8 +89,7 @@
 }
 .cont-index--form__textarea{
     padding: 0 20px;
-    width: 700px;
-    height: 273px;
+    @include size(700px,273px);
     border-radius: 6px;
     border: 1px solid #bbbbbb;
     box-sizing: border-box;
@@ -110,8 +101,7 @@
     color: #585858;
 }
 .cont-index--form__submit{
-    width: 82px;
-    height: 40px;
+    @include size(82px,40px);
     background: #d9d9d9;
     border: none;
     border-radius: 6px;
@@ -120,7 +110,7 @@
     font-weight: bold;
     margin: 12px 0 24px;
     color: #363636;
-    transition: all 200ms linear;
+    @include transitionLin;
     &:hover{
         cursor:pointer;
         background-color: #adadad;
@@ -129,64 +119,44 @@
 
 @media (max-width: 891px){
     .cont-main{
-        min-width: 200px;
-        max-width: 828px;
-        width: auto;
+        @include minmaxWidth(200px,828px,auto);
         div {
             margin-left: 16px;
             margin-right: 16px;
         }
     }
     .cont-top__header{
-        min-width: 200px;
-        max-width: 800px;
-        width: auto;
+        @include minmaxWidth(200px,800px,auto);
         word-break: normal;
         word-wrap: break-word;
     }
     .cont-index {
-        min-width: 168px;
-        max-width: 828px;
-        width: auto;
+        @include minmaxWidth(168px,828px,auto);
     }
     .cont-index--form{
-        min-width: 168px;
-        max-width: 700px;
-        width: 90%;
+        @include minmaxWidth(168px,700px,90%);
         margin: 12px 5%;
     }
     .cont-index--form__bottom {
         div:first-child{
-            width: 90%;
-            margin-left: 5%;
-            margin-right: 5%;
+            @include w90-5-5;
         }
         div:nth-child(2){
-            width: 90%;
-            margin-left: 5%;
-            margin-right: 5%;
+            @include w90-5-5;
         }
         div:nth-last-child(2){
-            width: 90%;
-            margin-left: 5%;
-            margin-right: 5%;
+            @include w90-5-5;
         }
     }
     .cont-index--form__input{
-        min-width: 100px;
-        max-width: 700px;
-        width: 100%;
+        @include minmaxWidth(100px,700px,100%);
     }
     .cont-index--form__textarea{
-        min-width: 100px;
-        max-width: 700px;
-        width: 100%;
-        word-break: normal;
-        word-wrap: break-word;
+        @include minmaxWidth(100px,700px,100%);
+        @include wordBreak;
     }
     .cont-index--form__checkbox__label{
-        word-break: normal;
-        word-wrap: break-word;
+        @include wordBreak;
     }
 }
 

@@ -13,11 +13,8 @@ body#inicio{ /*Background para la pág de inicio*/
 }
 /* ----------------- Main ----------------- */
 .main{ /*Espaciado en el logo central*/
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 90%;
-    height: 100vh;
+    @include flexRowCenterCenter;
+    @include size(90%,100vh);
     margin: 0 auto;
 }
 /* ========== /index ========== */
