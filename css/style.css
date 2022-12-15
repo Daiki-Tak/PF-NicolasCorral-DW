@@ -1,18 +1,19 @@
 @charset "UTF-8";
-/* ================= @customFonts ================= */
+/* ========== fuentes ========== */
 @font-face {
   font-family: 'OPTIEngeEtienne';
-  src: url("enge_etienne_font-webfont.woff2") format("woff2"), url("enge_etienne_font-webfont.woff") format("woff");
+  src: url("../fonts/enge_etienne_font-webfont.woff2") format("woff2"), url("../fonts/enge_etienne_font-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'Jupiter Pro';
-  src: url("jupiter_pro_bold-webfont.woff2") format("woff2"), url("jupiter_pro_bold-webfont.woff") format("woff");
+  src: url("../fonts/jupiter_pro_bold-webfont.woff2") format("woff2"), url("../fonts/jupiter_pro_bold-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 
-/* ================= @end ================= */
+/* ========== /fuentes ========== */
+/* ========== bases ========== */
 * {
   margin: 0;
   padding: 0; }
@@ -28,18 +29,13 @@ img {
   max-width: 100%;
   height: auto; }
 
-/* ================= index ================= */
-body#inicio {
-  /*Background para la pág de inicio*/
-  background: #ccc url("../images/inicio/background.jpg") no-repeat top;
-  background-size: cover; }
-
+/*Estructura inicial de las páginas en 3 filas para ubicar header y footer*/
 .grid {
-  /*Estructura inicial de la página en 3 filas*/
   display: grid;
   grid-template-rows: 100px 1fr 100px; }
 
-/* ================= Header ================= */
+/* ========== /bases ========== */
+/* ========== header ========== */
 *::after,
 *::before {
   box-sizing: border-box;
@@ -92,19 +88,83 @@ body#inicio {
   height: 64px;
   margin: 18px; }
 
-/* ================= /Header ================= */
-/* ================= Main ================= */
-.main {
-  /*Espaciado en el logo central*/
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 90%;
-  height: 100vh;
-  margin: 0 auto; }
+@media (max-width: 831px) {
+  .navbar-container input[type="checkbox"],
+  .navbar-container .hamburger-lines {
+    display: block; }
+  .navbar-container {
+    display: block;
+    position: relative;
+    height: 100px; }
+    .navbar-container input[type="checkbox"] {
+      position: absolute;
+      display: block;
+      height: 64px;
+      width: 64px;
+      top: 18px;
+      left: 18px;
+      z-index: 5;
+      opacity: 0; }
+  .navbar-container .hamburger-lines {
+    display: block;
+    height: 64px;
+    width: 64px;
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; }
+    .navbar-container .hamburger-lines .line {
+      display: block;
+      height: 6px;
+      width: 100%;
+      background: #fff; }
+    .navbar-container .hamburger-lines .line1 {
+      transform-origin: 0% 0%;
+      transition: transform 0.4s ease-in-out; }
+    .navbar-container .hamburger-lines .line2 {
+      transition: transform 0.2s ease-in-out; }
+    .navbar-container .hamburger-lines .line3 {
+      transform-origin: 0% 100%;
+      transition: transform 0.4s ease-in-out; }
+  .navbar .menu-items {
+    background: #272830C0;
+    position: fixed;
+    height: 100%;
+    min-width: 300px;
+    max-width: 500px;
+    transform: translate(-150%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease-in-out; }
+  .logo {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 64px;
+    height: 64px;
+    margin: 0; }
+  .navbar-container input[type="checkbox"]:checked ~ .menu-items {
+    transform: translateX(0); }
+  .navbar-container input[type="checkbox"]:checked ~ .chck {
+    position: fixed; }
+  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines {
+    position: fixed; }
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+      transform: rotate(45deg) scaleX(1.15) translateY(-6px); }
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+      transform: scaleY(0); }
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+      transform: rotate(-45deg) scaleX(1.15) translateY(6px); }
+  .navbar .general {
+    background-color: #272830; } }
 
-/* ================= /Main ================= */
-/* ================= Footer ================= */
+/* ========== /header ========== */
+/* ========== footer ========== */
 .footer {
   display: grid;
   grid-template-areas: "text text text" ". media .";
@@ -138,10 +198,26 @@ body#inicio {
       width: 64px;
       height: 64px; }
 
-/* ================= /Footer ================= */
-/* ================= /index ================= */
-/* ================= Historia ================= */
-/* --- Background para la pag --- */
+/* ========== /footer ========== */
+/* ========== index ========== */
+body#inicio {
+  /*Background para la pág de inicio*/
+  background: url("../images/inicio/background.jpg") no-repeat top;
+  background-size: cover; }
+
+/* ----------------- Main ----------------- */
+.main {
+  /*Espaciado en el logo central*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 100vh;
+  margin: 0 auto; }
+
+/* ========== /index ========== */
+/* ========== /historia ========== */
+/* --- Background para la pág --- */
 body#story {
   background-color: #000; }
 
@@ -156,7 +232,7 @@ body#story {
   /* --- Limitación de los bloques --- */ }
   .story div {
     height: 1080px; }
-    .story div:last-child div.story__box div.story__detail div div.two {
+    .story div:last-child div div div div.two {
       align-self: flex-start; }
 
 /* --- Ordenamiento de las posiciones de las imagenes --- */
@@ -216,8 +292,51 @@ body#story {
       height: 64px;
       align-self: flex-start; }
 
-/* ================= /Historia ================= */
-/* ================= Clases ================= */
+@media (max-width: 831px) {
+  .story div {
+    height: fit-content; }
+  .story__bg {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 0; }
+  .story__detail {
+    display: flex;
+    width: 95%;
+    height: auto;
+    position: relative;
+    padding: 0 2.5%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end; }
+    .story__detail h4 {
+      width: fit-content; }
+    .story__detail p {
+      line-height: 1;
+      font-size: 18px;
+      padding-bottom: 16px;
+      max-width: 100%; }
+    .story__detail div {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start; }
+      .story__detail div div.one {
+        justify-content: center; }
+  #endwalker div.story__detail div {
+    margin-bottom: 18px; } }
+
+@media (max-width: 475px) {
+  .story__detail > div {
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding-left: 0;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center; } }
+
+/* ========== /historia ========== */
+/* ========== clases ========== */
 body#classes {
   line-height: 1.5;
   font-family: 'Noto Sans', sans-serif;
@@ -263,6 +382,27 @@ body#classes {
       float: left;
       border-radius: 2px; }
 
+.classes__index__joblist--tanque {
+  margin-right: 20px;
+  background: url(../images/clases/background-tanks.jpg) bottom right no-repeat #f3f3f3; }
+
+.classes__index__joblist--curandero {
+  border-radius: 6px;
+  background: url(../images/clases/background-healers.jpg) bottom right no-repeat #f3f3f3; }
+  .classes__index__joblist--curandero h2 {
+    background: #346624; }
+
+.classes__index__joblist--dps {
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  background: url(../images/clases/background-dps.jpg) 72px bottom no-repeat #f3f3f3;
+  width: auto;
+  float: none;
+  overflow: hidden; }
+  .classes__index__joblist--dps h2 {
+    background: #732828; }
+
 .classes__index__joblist--tanque__body p, .classes__index__joblist--curandero__body p {
   padding: 16px 16px 12px;
   font-size: 14px; }
@@ -285,6 +425,9 @@ body#classes {
     transition: all 200ms linear; }
     .classes__index__joblist--tanque__body div div a img, .classes__index__joblist--curandero__body div div a img {
       margin-right: 8px; }
+    .classes__index__joblist--tanque__body div div a:hover, .classes__index__joblist--curandero__body div div a:hover {
+      background: rgba(153, 170, 255, 0.2);
+      text-decoration: none; }
 
 .classes__index__joblist--dps__body {
   border-bottom-left-radius: 6px;
@@ -303,53 +446,24 @@ body#classes {
       height: 48px;
       padding: 4px 16px;
       line-height: 48px;
-      color: #2d3a80;
+      color: #732828;
       font-size: 14px;
       font-weight: 900;
-      background: rgba(153, 170, 255, 0);
+      background: rgba(229, 161, 161, 0);
       position: relative;
       text-decoration: none;
       transition: all 200ms linear; }
       .classes__index__joblist--dps__body div div div a img {
         margin-right: 8px; }
       .classes__index__joblist--dps__body div div div a:hover {
-        background: rgba(153, 170, 255, 0.2);
+        background: rgba(229, 161, 161, 0.2);
         text-decoration: none; }
-
-.classes__index__joblist--tanque {
-  margin-right: 20px;
-  background: url(../images/clases/background-tanks.jpg) bottom right no-repeat #f3f3f3; }
-
-.classes__index__joblist--curandero {
-  border-radius: 6px;
-  background: url(../images/clases/background-healers.jpg) bottom right no-repeat #f3f3f3; }
-  .classes__index__joblist--curandero h2 {
-    background: #346624; }
-
-.classes__index__joblist--dps {
-  display: flex;
-  flex-direction: column;
-  border-radius: 6px;
-  background: url(../images/clases/background-dps.jpg) 72px bottom no-repeat #f3f3f3;
-  width: auto;
-  float: none;
-  overflow: hidden; }
-  .classes__index__joblist--dps h2 {
-    background: #732828; }
 
 .classes__index__joblist--curandero__body div div a {
   color: #346624;
   background: rgba(134, 191, 115, 0); }
   .classes__index__joblist--curandero__body div div a:hover {
     background: rgba(134, 191, 115, 0.2);
-    text-decoration: none; }
-
-.classes__index__joblist--dps__body div div div a {
-  color: #732828;
-  background: rgba(229, 161, 161, 0);
-  text-decoration: none; }
-  .classes__index__joblist--dps__body div div div a:hover {
-    background: rgba(229, 161, 161, 0.2);
     text-decoration: none; }
 
 .classes__index__joblist--dps__inner {
@@ -385,10 +499,19 @@ body#classes {
 .classes__index__joblist--dps__list__withMb {
   margin-bottom: 30px; }
 
-/* ================= /Clases ================= */
-/* ================= Jugabilidad ================= */
-/* --- Lo siento mucho al yo del futuro cuando tenga que editar 
-todo esto y lograr entender algo :,) --- */
+@media (max-width: 831px) {
+  .classes__index__joblist {
+    flex-direction: column; }
+  .classes__index__joblist--tanque {
+    margin-right: 0;
+    margin-bottom: 32px; }
+  .classes__index__joblist--dps__body {
+    flex-direction: column; }
+  .classes__index__joblist--dps__inner {
+    margin-right: 0; } }
+
+/* ========== /clases ========== */
+/* ========== jugabilidad ========== */
 .toc-main {
   width: 100%;
   background: #ccc;
@@ -499,8 +622,35 @@ todo esto y lograr entender algo :,) --- */
         margin: 0 16px;
         color: #404040; }
 
-/* ================= /Jugabilidad ================= */
-/* ================= Contacto ================= */
+@media (max-width: 831px) {
+  .toc-index {
+    min-width: 400px;
+    max-width: 800px;
+    width: auto; }
+  .toc-top__text01 {
+    min-width: 400px;
+    max-width: 800px;
+    width: auto;
+    margin: 0 16px 24px; }
+  .toc-top__search {
+    min-width: 400px;
+    max-width: 800px;
+    width: auto;
+    margin: 32px 32px; }
+  .toc-top__input {
+    min-width: 400px;
+    max-width: 800px;
+    width: auto; }
+  .toc-top__list {
+    flex-direction: column;
+    align-items: center; }
+    .toc-top__list div {
+      margin: 0 0 25px; }
+    .toc-top__list div:last-child {
+      margin: 0 0 50px; } }
+
+/* ========== /jugabilidad ========== */
+/* ========== contacto ========== */
 .cont-main {
   width: 100%;
   background: #ccc;
@@ -621,9 +771,7 @@ todo esto y lograr entender algo :,) --- */
     cursor: pointer;
     background-color: #adadad; }
 
-/* ================= /Contacto ================= */
 @media (max-width: 891px) {
-  /* ======== Contacto ======== */
   .cont-main {
     min-width: 200px;
     max-width: 828px;
@@ -670,168 +818,8 @@ todo esto y lograr entender algo :,) --- */
     word-wrap: break-word; }
   .cont-index--form__checkbox__label {
     word-break: normal;
-    word-wrap: break-word; }
-  /* ======== /Contacto ======== */ }
+    word-wrap: break-word; } }
 
-@media (max-width: 831px) {
-  /* -------- header -------- */
-  .navbar-container input[type="checkbox"],
-  .navbar-container .hamburger-lines {
-    display: block; }
-  .navbar-container {
-    display: block;
-    position: relative;
-    height: 100px; }
-    .navbar-container input[type="checkbox"] {
-      position: absolute;
-      display: block;
-      height: 64px;
-      width: 64px;
-      top: 18px;
-      left: 18px;
-      z-index: 5;
-      opacity: 0; }
-  .navbar-container .hamburger-lines {
-    display: block;
-    height: 64px;
-    width: 64px;
-    position: absolute;
-    top: 18px;
-    left: 18px;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around; }
-    .navbar-container .hamburger-lines .line {
-      display: block;
-      height: 6px;
-      width: 100%;
-      background: #fff; }
-    .navbar-container .hamburger-lines .line1 {
-      transform-origin: 0% 0%;
-      transition: transform 0.4s ease-in-out; }
-    .navbar-container .hamburger-lines .line2 {
-      transition: transform 0.2s ease-in-out; }
-    .navbar-container .hamburger-lines .line3 {
-      transform-origin: 0% 100%;
-      transition: transform 0.4s ease-in-out; }
-  .navbar .menu-items {
-    background: #272830C0;
-    position: fixed;
-    height: 100%;
-    min-width: 300px;
-    max-width: 500px;
-    transform: translate(-150%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.5s ease-in-out; }
-  .logo {
-    position: absolute;
-    top: 18px;
-    right: 18px;
-    width: 64px;
-    height: 64px;
-    margin: 0; }
-  .navbar-container input[type="checkbox"]:checked ~ .menu-items {
-    transform: translateX(0); }
-  .navbar-container input[type="checkbox"]:checked ~ .chck {
-    position: fixed; }
-  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines {
-    position: fixed; }
-    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
-      transform: rotate(45deg) scaleX(1.15) translateY(-6px); }
-    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
-      transform: scaleY(0); }
-    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
-      transform: rotate(-45deg) scaleX(1.15) translateY(6px); }
-  .navbar .general {
-    background-color: #272830; }
-  /* -------- /header -------- */
-  /* ======== Historia ======== */
-  .story div {
-    height: fit-content; }
-  .story__bg {
-    position: relative;
-    width: 100%;
-    height: auto;
-    z-index: 0; }
-  .story__detail {
-    display: flex;
-    width: 95%;
-    height: auto;
-    position: relative;
-    padding: 0 2.5%;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-end; }
-    .story__detail h4 {
-      width: fit-content; }
-    .story__detail p {
-      line-height: 1;
-      font-size: 18px;
-      padding-bottom: 16px;
-      max-width: 100%; }
-    .story__detail div {
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: flex-start; }
-      .story__detail div div.one {
-        justify-content: center; }
-  #endwalker div.story__detail div {
-    margin-bottom: 18px; }
-  /* ======== /Historia ======== */
-  /* ======== Clases ======== */
-  .classes__index__joblist {
-    flex-direction: column; }
-  .classes__index__joblist--tanque {
-    margin-right: 0;
-    margin-bottom: 32px; }
-  .classes__index__joblist--dps__body {
-    flex-direction: column; }
-  .classes__index__joblist--dps__inner {
-    margin-right: 0; }
-  /* ======== /Clases ======== */
-  /* ======== Jugabilidad ======== */
-  .toc-index {
-    min-width: 400px;
-    max-width: 800px;
-    width: auto; }
-  .toc-top__text01 {
-    min-width: 400px;
-    max-width: 800px;
-    width: auto;
-    margin: 0 16px 24px; }
-  .toc-top__search {
-    min-width: 400px;
-    max-width: 800px;
-    width: auto;
-    margin: 32px 32px; }
-  .toc-top__input {
-    min-width: 400px;
-    max-width: 800px;
-    width: auto; }
-  .toc-top__list {
-    flex-direction: column;
-    align-items: center; }
-    .toc-top__list div {
-      margin: 0 0 25px; }
-    .toc-top__list div:last-child {
-      margin: 0 0 50px; }
-  /* ======== /Jugabilidad ======== */ }
-
-@media (max-width: 475px) {
-  /* ======== Historia ======== */
-  .story__detail > div {
-    display: flex;
-    width: 100%;
-    height: auto;
-    padding-left: 0;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center; }
-  /* ======== /Historia ======== */ }
-
+/* ========== /contacto ========== */
 .general {
   background-color: #272830; }

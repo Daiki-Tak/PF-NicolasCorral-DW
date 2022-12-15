@@ -1,0 +1,35 @@
+@import "fonts";
+
+@import "base";
+
+@import "header";
+
+@import "footer";
+
+/* ========== index ========== */
+body#inicio{ /*Background para la pág de inicio*/
+    background: url("../images/inicio/background.jpg") no-repeat top;
+    background-size: cover;
+}
+/* ----------------- Main ----------------- */
+.main{ /*Espaciado en el logo central*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+}
+/* ========== /index ========== */
+
+@import "story";
+
+@import "classes";
+
+@import "gameplay";
+
+@import "contact";
+
+.general{
+    background-color: #272830;
+}

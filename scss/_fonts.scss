@@ -1,0 +1,20 @@
+//file: _fonts.scss
+/* ========== fuentes ========== */
+
+@font-face {
+    font-family: 'OPTIEngeEtienne';
+    src: url('../fonts/enge_etienne_font-webfont.woff2') format('woff2'),
+         url('../fonts/enge_etienne_font-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'Jupiter Pro';
+    src: url('../fonts/jupiter_pro_bold-webfont.woff2') format('woff2'),
+         url('../fonts/jupiter_pro_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/* ========== /fuentes ========== */

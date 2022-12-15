@@ -1,0 +1,214 @@
+//file: _classes.scss
+/* ========== clases ========== */
+
+body#classes{
+    line-height: 1.5;
+    font-family: 'Noto Sans', sans-serif;
+    color: #585858;
+}
+.classes__content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 16px 0 120px;
+    word-break: normal;
+    word-wrap: break-word;
+}
+.classes__text{
+    margin: 0 16px 32px;
+    padding: 0;
+    font-size: 14px;
+}
+.classes__index__joblist{
+    display: flex;
+    margin-bottom: 32px;
+}
+.classes__index__joblist--tanque, .classes__index__joblist--curandero, .classes__index__joblist--dps {
+    width: 390px;
+    overflow: hidden;
+    border-radius: 6px;
+    padding-bottom: 12px;
+    h2{
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        background: #2d3a80;
+        position: relative;
+        padding: 2px;
+        font-size: 16px;
+        color: #ffffff;
+        font-weight: 900;
+        line-height: 32px;
+        img {
+            width: 32px;
+            height: 32px;
+            display: block;
+            float: left;
+            border-radius: 2px;
+        }
+    }
+}
+.classes__index__joblist--tanque {
+    margin-right: 20px;
+    background: url(../images/clases/background-tanks.jpg) bottom right no-repeat #f3f3f3;
+}
+.classes__index__joblist--curandero {
+    border-radius: 6px;
+    background: url(../images/clases/background-healers.jpg) bottom right no-repeat #f3f3f3;
+    h2{
+        background: #346624;
+    }
+}
+.classes__index__joblist--dps {
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    background: url(../images/clases/background-dps.jpg) 72px bottom no-repeat #f3f3f3;
+    width: auto;
+    float: none;
+    overflow: hidden;
+    h2{
+        background: #732828;
+    }
+}
+.classes__index__joblist--tanque__body, .classes__index__joblist--curandero__body {
+    p {
+        padding: 16px 16px 12px;
+        font-size: 14px;
+    }
+    div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        div{
+            a {
+                display: flex;
+                height: 48px;
+                padding: 4px 16px;
+                line-height: 48px;
+                color: #2d3a80;
+                font-size: 14px;
+                font-weight: 900;
+                background: rgba(153,170,255,0);
+                position: relative;
+                text-decoration: none;
+                transition: all 200ms linear;
+                img {
+                    margin-right: 8px;
+                }
+                &:hover{
+                    background: rgba(153,170,255,0.2);
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+.classes__index__joblist--dps__body {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    overflow: hidden;
+    padding-bottom: 12px;
+    p {
+        padding: 16px 16px 12px;
+        font-size: 14px;
+    }
+    div{
+        div{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            div{
+                a {
+                    display: flex;
+                    height: 48px;
+                    padding: 4px 16px;
+                    line-height: 48px;
+                    color: #732828;
+                    font-size: 14px;
+                    font-weight: 900;
+                    background: rgba(229,161,161,0);
+                    position: relative;
+                    text-decoration: none;
+                    transition: all 200ms linear;
+                    img {
+                        margin-right: 8px;
+                    }
+                    &:hover{
+                        background: rgba(229,161,161,0.2);
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+.classes__index__joblist--curandero__body {
+    div{
+        div{
+            a{
+                color: #346624;
+                background: rgba(134,191,115,0);
+                &:hover{
+                    background: rgba(134,191,115,0.2);
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+.classes__index__joblist--dps__inner {
+    width: 390px;
+    box-sizing: border-box;
+    float: left;
+    margin-right: 20px;
+    &:nth-last-child(1) {
+        margin-right: 0;
+    }
+    p {
+        padding: 16px 16px 12px;
+        font-size: 14px;
+    }
+}
+.classes__index__joblist--dps__body{
+    display: flex;
+    h3 {
+        margin-left: 16px;
+        border-bottom: 1px solid #cccccc;
+        font-size: 16px;
+        font-weight: 900;
+        color: #585858;
+        padding-bottom: 4px;
+        line-height: 32px;
+        &.top {
+            padding-top: 16px;
+        }
+        img {
+            width: 32px;
+            height: 32px;
+            display: block;
+            float: left;
+            margin-right: 2px;
+        }
+    }
+}
+.classes__index__joblist--dps__list__withMb {
+    margin-bottom: 30px;
+}
+
+@media (max-width: 831px){
+    .classes__index__joblist {
+        flex-direction: column;
+    }
+    .classes__index__joblist--tanque {
+        margin-right: 0;
+        margin-bottom: 32px;
+    }
+    .classes__index__joblist--dps__body {
+        flex-direction: column;
+    }
+    .classes__index__joblist--dps__inner {
+        margin-right: 0;
+    }
+}
+/* ========== /clases ========== */

@@ -1,0 +1,158 @@
+//file: _gameplay.scss
+/* ========== jugabilidad ========== */
+
+.toc-main{
+    width: 100%;
+    background: #ccc;
+    padding-top: 48px;
+    height: 1%;
+    word-break: normal;
+    word-wrap: break-word;
+}
+.toc-index{
+    position: relative;
+    width: 820px;
+    margin: 0 auto;
+    color: #404040;
+    height: 1%;
+}
+.toc-top__header {
+    margin: 0 auto 24px;
+    display: block;
+    text-align: center;
+    font-family: 'Meiryo';
+    font-weight: bold;
+    font-size: 36px;
+    color: #0e438c;
+}
+.toc-top__text01 {
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto 24px;
+}
+.toc-top__search {
+    display: block;
+    background: #ffffff;
+    width: 700px;
+    height: 50px;
+    margin: 32px auto;
+    border: 2px solid #bbbbbb;
+    border-radius: 25px;
+    position: relative;
+}
+.toc-top__input {
+    width: 700px;
+    height: 50px;
+    padding: 0 60px 0 20px;
+    border-radius: 25px;
+    font-size: 20px;
+    color: #585858;
+    text-align: left;
+    display: block;
+    box-sizing: border-box;
+    outline: none;
+}
+.toc-top__submit {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: block;
+    background: none;
+    outline: none;
+    border: 0;
+    cursor: pointer;
+    img{
+        vertical-align: bottom;
+        border: 0;
+    }
+}
+.toc-top__list {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    div {
+        display: flex;
+        font-size: 0px;
+        vertical-align: top;
+        width: 400px;
+        margin: 0 20px 40px 0;
+        transition: all 200ms cubic-bezier(0.64, 0.01, 0.32, 1);
+        &:hover{
+            transform: translate(0, -8px);
+        }
+        &:nth-child(even) {
+            margin-right: 0;
+        }
+        a {
+            display: block;
+            padding-bottom: 16px;
+            background: #ffffff;
+            box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.25);
+            border-radius: 8px;
+            overflow: hidden;
+            text-decoration: none;
+            font-family: Arial, Verdana, sans-serif;
+            img {
+                width: 100%;
+                height: auto;
+                display: block;
+                margin-bottom: 16px;
+            }
+            h2 {
+                font-size: 20px;
+                font-weight: bold;
+                color: #404040;
+                margin: 0 16px 16px;
+            }
+            p {
+                font-size: 14px;
+                font-weight: normal;
+                margin: 0 16px;
+                color: #404040;
+            }
+        }
+    }
+}
+
+@media (max-width: 831px){
+    .toc-index {
+        min-width: 400px;
+        max-width: 800px;
+        width: auto;
+    }
+    .toc-top__text01 {
+        min-width: 400px;
+        max-width: 800px;
+        width: auto;
+        margin: 0 16px 24px;
+    }
+    .toc-top__search {
+        min-width: 400px;
+        max-width: 800px;
+        width: auto;
+        margin: 32px 32px;
+    }
+    .toc-top__input{
+        min-width: 400px;
+        max-width: 800px;
+        width: auto;
+    }
+    
+    .toc-top__list {
+        flex-direction: column;
+        align-items: center;
+        div{
+            margin: 0 0 25px;
+        }
+        div:last-child{
+            margin: 0 0 50px;
+        }
+    }
+}
+/* ========== /jugabilidad ========== */
