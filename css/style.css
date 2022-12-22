@@ -507,6 +507,8 @@ body#classes {
     margin-bottom: 32px; }
   .classes__index__joblist--dps__body {
     flex-direction: column; }
+    .classes__index__joblist--dps__body div.classes__index__joblist--dps__inner:first-child {
+      margin-bottom: 30px; }
   .classes__index__joblist--dps__inner {
     margin-right: 0; } }
 

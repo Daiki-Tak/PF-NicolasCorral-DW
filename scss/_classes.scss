@@ -197,6 +197,9 @@ body#classes{
     }
     .classes__index__joblist--dps__body {
         flex-direction: column;
+        div.classes__index__joblist--dps__inner:first-child{
+            margin-bottom: 30px;
+        }
     }
     .classes__index__joblist--dps__inner {
         margin-right: 0;
