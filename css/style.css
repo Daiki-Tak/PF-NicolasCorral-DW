@@ -64,23 +64,22 @@ img {
   display: flex;
   justify-content: space-between;
   width: 100%; }
-  .menu-items div {
+  .menu-items a {
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
     width: 100%;
     height: 100px;
-    transition: all 200ms linear; }
-    .menu-items div:hover {
+    transition: all 200ms linear;
+    color: #fff;
+    text-decoration: none;
+    font-family: "OPTIEngeEtienne", serif;
+    font-size: 55px;
+    text-shadow: 0px 0px 4px #132326, 0px 0px 4px #132326;
+    line-height: 100px; }
+    .menu-items a:hover {
       background: #BEBEC0C0; }
-    .menu-items div a {
-      color: #fff;
-      text-decoration: none;
-      font-family: "OPTIEngeEtienne", serif;
-      font-size: 55px;
-      text-shadow: 0px 0px 4px #132326, 0px 0px 4px #132326;
-      line-height: 100px; }
 
 .logo {
   order: 1;
