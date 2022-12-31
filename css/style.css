@@ -26,9 +26,10 @@
 
 /* ========== /fuentes ========== */
 /* ========== bases ========== */
-* {
-  margin: 0;
-  padding: 0; }
+*, *::after, *::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
 
 body {
   background-color: #ccc; }
@@ -48,12 +49,6 @@ img {
 
 /* ========== /bases ========== */
 /* ========== header ========== */
-*::after,
-*::before {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0; }
-
 .navbar input[type="checkbox"],
 .navbar .hamburger-lines {
   display: none; }

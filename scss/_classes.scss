@@ -1,11 +1,14 @@
 //file: _classes.scss
 /* ========== clases ========== */
 
+//reglas generales para la página
 body#classes{
     line-height: 1.5;
     font-family: 'Noto Sans', sans-serif;
     color: #585858;
 }
+
+//definición del bloque central, clase englobadora
 .classes__content{
     @include flexColumn-Center;
     width: 100%;
@@ -13,6 +16,8 @@ body#classes{
     word-break: normal;
     word-wrap: break-word;
 }
+
+//modificador 1, texto descriptivo
 .classes__text{
     margin: 0 16px 32px;
     padding: 0;
@@ -22,6 +27,13 @@ body#classes{
     display: flex;
     margin-bottom: 32px;
 }
+
+/* NOTA PARA EL PROFE: va a ver que en este scss muchas veces están declaradas las clases
+en conjuntos de 3, más que nada esto es porque en definitiva los 3 bloques son casi iguales
+y solo difieren en cosas pequeñas, entonces me resultó más sencillo declarar todo junto y luego usar
+modificadores para atributos individuales como el background color */
+
+//definición principal de los estilos de los bloques
 .classes__index__joblist--tanque, .classes__index__joblist--curandero, .classes__index__joblist--dps {
     width: 390px;
     overflow: hidden;
@@ -45,6 +57,8 @@ body#classes{
         }
     }
 }
+
+//particularización de los backgrounds para el bloque y la banda superior
 .classes__index__joblist--tanque {
     margin-right: 20px;
     background: url(../images/clases/background-tanks.jpg) bottom right no-repeat #f3f3f3;
@@ -56,6 +70,8 @@ body#classes{
         background: #346624;
     }
 }
+
+//individualización del bloque de DPS
 .classes__index__joblist--dps {
     @include flexColumn;
     border-radius: 6px;
@@ -67,6 +83,8 @@ body#classes{
         background: #732828;
     }
 }
+
+//definición de estilos a los objetos dentro de los 2 primeros bloques
 .classes__index__joblist--tanque__body, .classes__index__joblist--curandero__body {
     p {
         padding: 16px 16px 12px;
@@ -98,6 +116,8 @@ body#classes{
         }
     }
 }
+
+//definición de estilos a los objetos dentro del bloque DPS
 .classes__index__joblist--dps__body {
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
@@ -135,6 +155,8 @@ body#classes{
         }
     }
 }
+
+//particularización del hover para el bloque Curandero
 .classes__index__joblist--curandero__body {
     div{
         div{
@@ -149,6 +171,8 @@ body#classes{
         }
     }
 }
+
+//alineación y estilos de los bloques interiores a DPS
 .classes__index__joblist--dps__inner {
     width: 390px;
     box-sizing: border-box;
@@ -183,6 +207,8 @@ body#classes{
         }
     }
 }
+
+//clase extra unicamente para ponerle margen al ultimo bloque dentro de DPS
 .classes__index__joblist--dps__list__withMb {
     margin-bottom: 30px;
 }
